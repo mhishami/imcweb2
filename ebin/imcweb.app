@@ -1,0 +1,9 @@
+{application,imcweb,
+             [{description,[]},
+              {vsn,"1"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {mod,{imcweb_app,[]}},
+              {env,[]},
+              {modules,[base_dtl,home_controller,home_dtl,imcweb,imcweb_app,
+                        imcweb_sup,page_dtl]}]}.
