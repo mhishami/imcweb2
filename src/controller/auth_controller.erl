@@ -16,13 +16,11 @@ before_filter(Params, _Req) ->
 handle_request(<<"GET">>, <<"login">> = Action, _Args, _Params, _Req) ->    
     {Action, []};
 
-handle_request(<<"POST">>, <<"contact">>, _Args, [_, _, _, {qs_body, Vals}], _Req) ->
-    Name = proplists:get_value(<<"name">>, Vals),
-    Email = proplists:get_value(<<"email">>, Vals),
-    Subject = proplists:get_value(<<"subject">>, Vals),
-    Message = proplists:get_value(<<"message">>, Vals),
+handle_request(<<"POST">>, <<"login">>, _Args, [_, _, _, {qs_body, Vals}], _Req) ->
+    Username = proplists:get_value(<<"username">>, Vals),
+    Password = proplists:get_value(<<"password">>, Vals),
     
-    io:format("Message: ~p, ~p, ~p, ~p~n", [Name, Email, Subject, Message]),
+    io:format("Login: ~p, ~p~n", [Username, Password]),
     {redirect, "/"};
 
 handle_request(_, _, _, _, _) ->

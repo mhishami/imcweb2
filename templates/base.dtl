@@ -258,8 +258,9 @@
 	<div class="row">
 		<div class="span12">
 			<div class="cform" id="contact-form">
-				<div id="sendmessage">
-					 Your message has been sent. Thank you!
+				<div class="alert" id="sendmessage">
+          <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+					<strong>Info!</strong> Your message has been sent. Thank you!
 				</div>
 				<form action="/home/contact" method="post" class="contactForm">
 					<div class="row">
@@ -338,21 +339,22 @@
 	<div class="row">
 		<div class="span4 offset4">
 			<div class="cform" id="contact-form">
-        <!-- <div id="sendmessage">
-           Your message has been sent. Thank you!
+        <!-- <div id="loginmessage">
+           Your login has been processed.
         </div> -->
-				<form action="/home/contact" method="post" class="contactForm">
+        
+				<form method="post" action="auth/login" class="loginForm">
 					<div class="row">
 						<div class="span4">
 							<div class="field username">
 								<input type="text" name="username" placeholder="Your Username" class="cform-text" size="40" data-rule="maxlen:8" data-msg="Please enter at least 8 chars" />
-								<div class="validation">
-								</div>
+                <div class="validation">
+                </div>
 							</div>
 							<div class="field password">
-								<input type="password" name="password" placeholder="Your Password" class="cform-text" size="40" data-rule="maxlen:8" data-msg="Please enter at least 8 chars of subject" />
-								<div class="validation">
-								</div>
+								<input type="password" name="password" placeholder="Your Password" class="cform-text" size="40" data-rule="maxlen:8" data-msg="Please enter at least 8 chars of password" />
+                <div class="validation">
+                </div>
 							</div>
               <div>
                 <input type="submit" value="Login" class="btn btn-primary pull-left">
