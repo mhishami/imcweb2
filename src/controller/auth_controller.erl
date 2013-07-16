@@ -1,4 +1,4 @@
--module (home_controller).
+-module (auth_controller).
 -export ([handle_request/5]).
 -export ([before_filter/2]).
 
@@ -13,9 +13,8 @@ before_filter(Params, _Req) ->
     % end.
     {ok, proceed}.
 
-handle_request(<<"GET">>, _Action, _Args, _Params, _Req) ->    
-    %% / will render home.dtl
-    {ok, []};
+handle_request(<<"GET">>, <<"login">> = Action, _Args, _Params, _Req) ->    
+    {Action, []};
 
 handle_request(<<"POST">>, <<"contact">>, _Args, [_, _, _, {qs_body, Vals}], _Req) ->
     Name = proplists:get_value(<<"name">>, Vals),

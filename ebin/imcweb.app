@@ -5,5 +5,5 @@
               {applications,[kernel,stdlib]},
               {mod,{imcweb_app,[]}},
               {env,[]},
-              {modules,[base_dtl,home_controller,home_dtl,imcweb,imcweb_app,
-                        imcweb_sup,page_dtl]}]}.
+              {modules,[auth_controller,base_dtl,home_controller,home_dtl,
+                        imcweb,imcweb_app,imcweb_sup,login_dtl,page_dtl]}]}.

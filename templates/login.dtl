@@ -1,0 +1,43 @@
+{% extends "base.dtl" %}
+
+{% block content %}
+
+
+<section id="login" class="section orange">
+<div class="container">
+	<h4>Login</h4>
+	<div class="blankdivider30">
+	</div>
+	<div class="row">
+		<div class="span4 offset4">
+			<div class="cform" id="contact-form">
+        <!-- <div id="sendmessage">
+           Your message has been sent. Thank you!
+        </div> -->
+				<form action="/home/contact" method="post" class="contactForm">
+					<div class="row">
+						<div class="span4">
+							<div class="field username">
+								<input type="text" name="username" placeholder="Your Username" class="cform-text" size="40" data-rule="maxlen:8" data-msg="Please enter at least 8 chars" />
+								<div class="validation">
+								</div>
+							</div>
+							<div class="field password">
+								<input type="password" name="password" placeholder="Your Password" class="cform-text" size="40" data-rule="maxlen:8" data-msg="Please enter at least 8 chars of subject" />
+								<div class="validation">
+								</div>
+							</div>
+              <div>
+                <input type="submit" value="Login" class="btn btn-primary pull-left">
+              </div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- ./span12 -->
+	</div>
+</div>
+</section>
+
+{% endblock %}
