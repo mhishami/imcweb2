@@ -83,9 +83,11 @@
 				</div>
 				<!-- end slider -->
 			</div>
-      <div>
-        <a href="/#about" class="btn">Scroll Down</a>
-      </div>
+      <!-- <div>
+        <a href="/#about" class="scrollDown">
+          <i class="icon-angle-down icon-square icon-bgdark icon-2x"></i>
+        </a>
+      </div> -->
 		</div>
 	</div>
 	</header>
