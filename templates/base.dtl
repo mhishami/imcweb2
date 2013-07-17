@@ -83,6 +83,9 @@
 				</div>
 				<!-- end slider -->
 			</div>
+      <div>
+        <a href="/#about" class="btn">Scroll Down</a>
+      </div>
 		</div>
 	</div>
 	</header>
