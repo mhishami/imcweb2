@@ -127,7 +127,7 @@ a.scrollup i:hover {
 
 /*---------- forms ----------*/
 
-input[type=text], input[type=password], input[type=submit], textarea {
+input[type=text], input[type=submit], textarea {
 	width: 100%;
 	padding: 0.5em;
 	font-size: 1em;
@@ -914,7 +914,7 @@ section#about {
 	z-index: 999;
 }
 
-#contact-form input[type=text], input[type=password], .contactForm textarea {
+#contact-form input[type=text], .contactForm textarea {
 	background: rgba(227, 231, 228, 1);
 	font-family: 'Open Sans', sans serif;
 	border: 0;
@@ -922,7 +922,7 @@ section#about {
 	text-align: left;
 	vertical-align: middle;
 }
-#contact-form input[type=text]:focus, input[type=password]:focus, .contactForm textarea:focus {
+#contact-form input[type=text]:focus, .contactForm textarea:focus {
 	background: rgba(101, 106, 100, 1);
 	color: #eff1ef;
 	box-shadow: none;
@@ -935,12 +935,6 @@ section#about {
 #contact-form input[type=text] {
 	height: 60px;
 	margin-bottom:30px;
-  font-size: 1.5em;
-}
-#contact-form input[type=password] {
-	height: 60px;
-	margin-bottom:30px;
-  font-size: 1.5em;
 }
 #contact-form input[type=submit] {
 	color: #fff;
@@ -1635,54 +1629,53 @@ i.icon-white {
     /* Smartphones (portrait and landscape) ----------- */
 @media only screen  and (min-device-width : 320px)  and (max-device-width : 480px) {
 
-  section.section {
-   padding: 1em 0;
-  }
+ section.section {
+ padding: 1em 0;
+}
 
-  #works .container {
-   top: 0 !important;
-  }
+ #works .container {
+ top: 0 !important;
+}
 
-  .max-img {
-   width: 100%;
-  }
-  .max-img {
-   margin-right: auto;
-   margin-left: auto;
-   display: block;
-  }
+.max-img {
+ width: 100%;
+}
+ .max-img {
+ margin-right: auto;
+ margin-left: auto;
+ display: block;
+}
 
-  section#services h2 {
-   margin-bottom: 0.25em;
-  }
-  section#services h2, section#services ul {
-   text-align: center;
-  }
+ section#services h2 {
+ margin-bottom: 0.25em;
+}
+ section#services h2, section#services ul {
+ text-align: center;
+}
 		
 
-  /* team */
+/* team */
 		
-  #team .team-thumb {
-   margin-right: auto;
-   margin-left: auto;
-   width: 150px;
-   display: block;
-   text-align:center
-  }
-  .job-position: {
-   margin-bottom: 1.5em;
-  }
-  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
-   margin-left: auto;
-   margin-right: auto;
-  }
+#team .team-thumb {
+ margin-right: auto;
+ margin-left: auto;
+ width: 150px;
+ display: block;
+ text-align:center
+}
+ .job-position: {
+ margin-bottom: 1.5em;
+}
+ .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+ margin-left: auto;
+ margin-right: auto;
+}
 		
 /* Contact Form */
 	#contact-form {
-	 overflow: hidden;
+		overflow: hidden;
 	}
 	#contact-form input[type=submit] {
-	 width: 100%;
+		width: 100%;
 	}
-  
 }
