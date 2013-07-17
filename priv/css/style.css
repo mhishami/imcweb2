@@ -377,18 +377,18 @@ header .logo {
 }
 
 #main-flexslider ul.slides li p {
-	font-size: 64px;
+	font-size: 72px;
 	text-transform: uppercase;
 	position: relative;
 	margin-bottom: 0px;
 	text-align: center;
 	line-height: 1;
-	color:#ffffff;
+	color:#333;
 }
 #main-flexslider.flexslider {
-		margin:0;
-		background:none;
-		border:none;
+	margin:0;
+	background:none;
+	border:none;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-o-border-radius: 0;
