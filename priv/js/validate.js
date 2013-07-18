@@ -87,7 +87,13 @@ jQuery(document).ready(function($) {
   			$("#errormessage").ajaxComplete(function(event, request, settings) {
 		
     			if(msg == 'OK') {
-    				$("#sendmessage").addClass("show");				
+    				$("#sendmessage").addClass("show");	
+            
+            $('#name').val('');
+            $('#email').val('');
+            $('#subject').val('');
+            $('#message').val('');
+            			
     			} else {
     				$("#sendmessage").removeClass("show");
     				result = msg;
