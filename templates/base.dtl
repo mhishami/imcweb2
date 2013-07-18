@@ -27,7 +27,7 @@
         <section id="home">
             <div class="row centered">
 
-                <h1 class="fade-it"><img alt="IRIDIANMedia" src="/static/assets/img/iridian-bg-dark.png"></h1>
+                <h1 class="fade-it"><img alt="IRIDIANMedia" src="/static/assets/img/iridian-bg-white.png"></h1>
                 <div class="flexslider">
                     <ul class="slides">
                       <li><h2>dedicated and passionate</h2></li>

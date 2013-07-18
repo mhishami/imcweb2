@@ -215,7 +215,7 @@ footer a:hover{color: #ccc; text-decoration: none;}
 .flexslider ul li h2 {
     font-weight: 300;  
     vertical-align: middle;
-    color: #efefef;
+    color: #777;
     z-index: 999;
 }
 
@@ -244,7 +244,7 @@ footer a:hover{color: #ccc; text-decoration: none;}
 #down_button_contact a {
     width:180px;
     padding: 0px;
-    background-color: #00aed7;
+    background-color: #fb8b00;
     font-family:'Open Sans', serif;
     font-size:13px;
     color:#FFF;
