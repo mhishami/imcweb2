@@ -2,20 +2,15 @@
 -export ([handle_request/5]).
 -export ([before_filter/2]).
 
--define (ME, <<"mhishami@gmail.com">>).
+-define (ME, "noreply@iridianmedia.com").
+-define (TO, "hisham@iridianmedia.com").
 -define (OPTS, [
     {relay, "smtp.gmail.com"}, 
-    {username, "mhishami@gmail.com"}, 
-    {password, "sh4mh4s123"},
+    {username, "noreply@iridianmedia.com"}, 
+    {password, "n0r3ply123"},
     {ssl, true}
 ]).
 
--define (SUBJECT, <<"Subject: [IMC Contact Form] ">>).
--define (FROM, <<"From: ">>).
--define (LT, <<" <">>).
--define (GT, <<"> ">>).
--define (CRLF, <<"\r\n">>).
--define (TO, <<"To: Hisham Ismail <hisham@iridianmedia.com>">>).
 
 before_filter(_Params, _Req) ->
     %% do some checking
@@ -33,10 +28,10 @@ handle_request(<<"GET">>, _Action, _Args, _Params, _Req) ->
     {ok, []};
 
 handle_request(<<"POST">>, <<"contact">>, _Args, [_, _, _, {qs_body, Vals}], _Req) ->
-    Name = proplists:get_value(<<"name">>, Vals),
-    Email = proplists:get_value(<<"email">>, Vals),
-    Subject = proplists:get_value(<<"subject">>, Vals),
-    Message = proplists:get_value(<<"message">>, Vals),
+    Name = binary_to_list(proplists:get_value(<<"name">>, Vals)),
+    Email = binary_to_list(proplists:get_value(<<"email">>, Vals)),
+    Subject = binary_to_list(proplists:get_value(<<"subject">>, Vals)),
+    Message = binary_to_list(proplists:get_value(<<"message">>, Vals)),
     
     io:format("Vals: ~p~n", [Vals]),
     
@@ -45,17 +40,26 @@ handle_request(<<"POST">>, <<"contact">>, _Args, [_, _, _, {qs_body, Vals}], _Re
     %     "Subject: Testing\r\nFrom: Hisham <mhishami@gmail.com> \r\nTo: Hisham <hisham@iridianmedia.com> \r\n\r\nThis is the email body"}, ?OPTS).
     
     % send the email out
-    gen_smtp_client:send({
-        Email, ["hisham@iridianmedia.com"],
-        <<?SUBJECT/binary, Subject/binary, ?CRLF/binary,
-        ?FROM/binary, Name/binary, ?LT/binary, Email/binary, ?GT/binary, ?CRLF/binary,
-        ?TO/binary, ?CRLF/binary, ?CRLF/binary,
+    % M = "Subject: [IMC WebForm] " ++ Subject ++ "\r\n" ++
+    %     "From: " ++ Name ++ "<" ++ Email ++ ">" ++ "\r\n" ++
+    %     "To: Hisham Ismail <hisham@iridianmedia.com>" ++
+    %     "\r\n\r\n" ++
+    %     "From: " ++ Name ++ "<" ++ Email ++ ">" ++ "\r\n\r\n" ++
+    %     Message,
+        
+    % M = "Subject: " ++ Subject ++ "\r\n" ++
+    %     "From: " ++ Name ++ " <" ++ Email ++ "> \r\n" ++ 
+    %     "To: Hisham <hisham@iridianmedia.com> \r\n\r\n" ++ 
+    %     Message,
+        
+    M = "Subject: [ContactForm] " ++ Subject ++ "\r\n" ++
+        "From: NoReply <noreply@iridianmedia.com> \r\n" ++
+        "To: Info <info@iridianmedia.com> \r\n\r\n" ++ 
+        "Sender: " ++ Name ++ " <" ++ Email ++ ">\r\n\r\n" ++
+        Message,
+    io:format("~p~n", [M]),
 
-        ?FROM/binary, Name/binary, ?LT/binary, Email/binary, ?GT/binary, 
-        ?CRLF/binary, ?CRLF/binary,
-
-        Message/binary>>}, ?OPTS),
-    
+    gen_smtp_client:send({?ME, [?TO], M}, ?OPTS),    
     {json, [{result, <<"OK">>}]};
     
 handle_request(_, _, _, _, _) ->
